@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Doherty’s Cars – Troubleshooting & FAQ</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f6f8fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    nav {
+      background-color: #1e5799;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 8px;
+      padding: 30px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #1e5799;
+      border-bottom: 2px solid #1e5799;
+      padding-bottom: 5px;
+    }
+
+    details {
+      margin-bottom: 20px;
+    }
+
+    summary {
+      font-weight: bold;
+      cursor: pointer;
+      color: #0a3d62;
+      padding: 5px 0;
+    }
+
+    summary:hover {
+      color: #1e5799;
+    }
+
+    p {
+      margin: 10px 0 15px 20px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0a3d62;
+      color: white;
+      font-size: 14px;
+    }
+
+    a.help-link {
+      color: #1e5799;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Troubleshooting & FAQ</h1>
+    <p>Common questions and solutions for the Test Drive Booking System</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#troubleshooting">Troubleshooting</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+  <main>
+    <section id="troubleshooting">
+      <h2>Troubleshooting</h2>
+
+      <details>
+        <summary>The customer list isn’t showing new customers.</summary>
+        <p>Click the <b>Refresh</b> button in the Customer Maintenance form.  
+        If it still doesn’t appear, ensure the new customer was saved successfully and that your database connection string is correct.</p>
+      </details>
+
+      <details>
+        <summary>I get a database connection error.</summary>
+        <p>Check that the database file <b>Dohertys2025.mdf</b> exists in your project’s <code>App_Data</code> or data directory.  
+        If using SQL Server, make sure the connection string in <code>StaticClass.connString</code> points to the correct path or instance.</p>
+      </details>
+
+      <details>
+        <summary>The test drive booking says there’s a double booking, but the slot is free.</summary>
+        <p>Ensure the <b>Start Date</b> and <b>End Date</b> are correctly set, and check that another booking doesn’t overlap even partially.  
+        The system prevents overlapping time ranges for the same salesperson or vehicle.</p>
+      </details>
+
+      <details>
+        <summary>The backup feature gives an error about database in use.</summary>
+        <p>Close any open SQL Server Management Studio or database browser windows.  
+        Then retry the backup. If the error persists, run the application as administrator to ensure file access permissions.</p>
+      </details>
+
+      <details>
+        <summary>The program won’t open after moving it to another computer.</summary>
+        <p>Ensure the database file is copied with the application.  
+        If you used a full SQL Server instance, install SQL Server Express on the target machine or use a local MDF file connection.</p>
+      </details>
+    </section>
+
+    <section id="faq">
+      <h2>Frequently Asked Questions</h2>
+
+      <details>
+        <summary>Can I edit or delete customers?</summary>
+        <p>Yes. Select the customer in the list and click <b>Update Customer</b> to change details.  
+        Deleting can be added by your administrator using SQL tools or future updates.</p>
+      </details>
+
+      <details>
+        <summary>Can I restore data from a backup?</summary>
+        <p>Yes. Replace your existing database file with the backed-up <code>.mdf</code> and <code>.ldf</code> files,  
+        then restart the program. The application will reconnect automatically.</p>
+      </details>
+
+      <details>
+        <summary>What version of SQL Server does this use?</summary>
+        <p>The system is designed for SQL Server Express, but it also works with LocalDB or a full SQL Server instance if your connection string is updated.</p>
+      </details>
+
+      <details>
+        <summary>Where is my data stored?</summary>
+        <p>All data — customers, staff, and bookings — is stored in the <b>Dohertys2025.mdf</b> database file located in your project’s data directory.</p>
+      </details>
+
+      <details>
+        <summary>How can I get more help?</summary>
+        <p>Visit the <a class="help-link" href="index.html">main Help Centre page</a>  
+        or contact your project supervisor or system administrator for support.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Doherty’s Cars | Test Drive Booking System</p>
+    <p><a class="help-link" href="index.html">Back to Help Centre</a></p>
+  </footer>
+
+</body>
+</html>
