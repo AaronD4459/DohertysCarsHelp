@@ -4,23 +4,180 @@
   <meta charset="UTF-8">
   <title>Doherty’s Cars Help Centre</title>
   <style>
-    body { font-family: Arial; margin: 40px; background: #f4f4f4; }
-    h1 { color: #003366; }
-    .content { background: white; padding: 20px; border-radius: 8px; max-width: 700px; }
-    ul { line-height: 1.8; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background-color: #f6f8fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    nav {
+      background-color: #1e5799;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 8px;
+      padding: 30px 40px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: #1e5799;
+      border-bottom: 2px solid #1e5799;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      line-height: 1.8;
+      padding-left: 25px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0a3d62;
+      color: white;
+      font-size: 14px;
+    }
+
+    .tip {
+      background: #e8f4fd;
+      border-left: 4px solid #1e5799;
+      padding: 10px 15px;
+      margin: 15px 0;
+      font-size: 14px;
+    }
+
+    a.help-link {
+      color: #1e5799;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Welcome to Doherty’s Cars Help Centre</h1>
-    <p>This guide helps you use the Test Drive Booking System.</p>
-    <h2>Topics</h2>
-    <ul>
-      <li><b>Adding Customers:</b> Click “Add New Customer” and fill out the form.</li>
-      <li><b>Filtering:</b> Use the search bar to find customers quickly.</li>
-      <li><b>Booking Test Drives:</b> Go to “Book a Test Drive” and select an available slot.</li>
-      <li><b>Backing Up:</b> Use the “Backup” button to save your data.</li>
-    </ul>
-  </div>
+
+  <header>
+    <h1>Doherty’s Cars Help Centre</h1>
+    <p>Your guide to using the Test Drive Booking System</p>
+  </header>
+
+  <nav>
+    <a href="#customers">Customers</a>
+    <a href="#staff">Staff</a>
+    <a href="#bookings">Test Drives</a>
+    <a href="#filter">Filtering</a>
+    <a href="#backup">Backups</a>
+  </nav>
+
+  <main>
+    <section id="customers">
+      <h2>Adding and Managing Customers</h2>
+      <p>The <b>Customer Maintenance</b> form allows you to view and manage all registered customers.</p>
+      <ul>
+        <li>To add a new customer, click the <b>Add New Customer</b> button.</li>
+        <li>Fill in the required fields including name, address, phone number, email, date of birth, driving licence number, and expiry date.</li>
+        <li>Select whether the customer is a returning customer (<b>Yes/No</b>).</li>
+        <li>All fields are validated before saving — invalid emails, phone numbers, or postcodes will show an error.</li>
+        <li>Once saved, the new customer appears in the <b>Customer List</b> immediately after pressing <b>Refresh</b>.</li>
+        <li>To edit an existing customer, select them from the list and click <b>Update Customer</b>.</li>
+      </ul>
+      <div class="tip">
+        <b>Tip:</b> You can use the search box above the table to quickly find a customer by name.
+      </div>
+    </section>
+
+    <section id="staff">
+      <h2>Adding and Updating Staff Members</h2>
+      <p>Staff records are managed from the <b>Staff Maintenance</b> form.</p>
+      <ul>
+        <li>Click <b>Add Staff</b> to create a new staff profile.</li>
+        <li>Enter the staff member’s details, including name, position, and contact information.</li>
+        <li>To modify details, select the staff member and click <b>Update Staff</b>.</li>
+        <li>All staff are stored in the database and will appear in the <b>Staff List</b> automatically.</li>
+      </ul>
+    </section>
+
+    <section id="bookings">
+      <h2>Creating a Test Drive Booking</h2>
+      <p>The <b>Test Drive Booking</b> form allows you to schedule and manage vehicle test drives.</p>
+      <ul>
+        <li>Select a <b>Customer</b>, <b>Staff Member</b> (Salesperson), and <b>Vehicle</b> from their respective dropdown lists.</li>
+        <li>Set the <b>Start Date</b> and <b>End Date</b> for the test drive.</li>
+        <li>The system checks for <b>double bookings</b> — if the salesperson or vehicle is already booked during the same period, you’ll be notified.</li>
+        <li>Once confirmed, click <b>Book Test Drive</b> to save the record.</li>
+        <li>Bookings are automatically stored in the database and can be viewed later.</li>
+      </ul>
+      <div class="tip">
+        <b>Tip:</b> Ensure you’ve added both the customer and staff beforehand so they appear in the dropdown lists.
+      </div>
+    </section>
+
+    <section id="filter">
+      <h2>Filtering the Customer List</h2>
+      <p>The <b>Filter</b> text box above the customer table allows you to search for customers by name.</p>
+      <ul>
+        <li>Simply start typing a first or last name — the list will update automatically.</li>
+        <li>The filter is <b>case-insensitive</b>, so typing “jo” will match “John”, “Joanna”, etc.</li>
+        <li>To clear the filter, just delete the text — all customers will reappear.</li>
+      </ul>
+    </section>
+
+    <section id="backup">
+      <h2>Backing Up the Database</h2>
+      <p>You can create a backup of the system’s database to protect customer, staff, and booking data.</p>
+      <ul>
+        <li>Click the <b>Backup</b> button in the Customer Maintenance form.</li>
+        <li>Choose where to save the backup file. It will be saved as an <b>.mdf</b> database file (and a matching <b>.ldf</b> log file).</li>
+        <li>The backup file name automatically includes the current date and time, for example:
+          <br><code>Dohertys2025_Backup_20251013_143200.mdf</code>
+        </li>
+        <li>If the database is in use, make sure no other programs (like SQL Server Management Studio) are connected during the backup.</li>
+        <li>After backup, the database automatically reattaches so the application can continue running normally.</li>
+      </ul>
+      <div class="tip">
+        <b>Tip:</b> Store backups on a USB drive or cloud folder to prevent data loss.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Doherty’s Cars | Test Drive Booking System</p>
+    <p><a class="help-link" href="#top">Back to top</a></p>
+  </footer>
+
 </body>
 </html>
+
